@@ -30,9 +30,9 @@ const Video = ({source}) => {
                 src={source}></video>
             
             {/* VideoFooter */}
-            <VideoFooter />
+            <VideoFooter channel={"YouTube"} description = {"Sample TikTok video"} song = {"99 problems but REACT ain't one"}/>
             {/* VideoSidebar */}
-            <VideoSidebar />
+            <VideoSidebar likes = {111} shares = {234} messages = {98}/>
         </div>
     )
 }
