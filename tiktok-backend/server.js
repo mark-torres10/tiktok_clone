@@ -1,19 +1,28 @@
 import express from "express"; 
 import mongoose from "mongoose"; 
+import Data from './data.js';  // test data
 
-// create instance of application
-const app = express(); 
+/* App config */
+const app = express(); // create instance of application
+const port = 9000; // port for app to run 
 
-// port for app to run 
-const port = 9000; 
+/* middlewares */
 
+/* DB config */
+
+
+/* API endpoints */
 // test API, just to check that our connections work
 // when using a GET request on root directory, run callback function
 app.get('/', (request, response) => 
     response.status(200).send("App successfully run")
 ); 
 
-// tell what port to listen for
+app.get('/v1/posts', (request, response) => 
+    response.status(200).send(Data)
+)
+
+// listener
 app.listen(port, ()=> console.log(`listening on localhost:${port}`)); 
 
 
