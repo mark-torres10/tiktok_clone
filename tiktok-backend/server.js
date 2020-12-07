@@ -5,13 +5,13 @@ import Videos from './dbModel.js';
 
 /* App config */
 const app = express(); // create instance of application
-const port = 9000; // port for app to run 
+const port = process.env.PORT || 9000; // port for app to run 
 
 /* middlewares */
 app.use(express.json()); // passes response as a JSON object
 app.use((request, response, next) => {
-    response.setHeaders('Access-Control-Allow-Origin', '*'), // not to be used in production
-    response.setHeaders('Access-Control-Allow-Headers', '*'),
+    response.setHeader('Access-Control-Allow-Origin', '*'), // not to be used in production
+    response.setHeader('Access-Control-Allow-Headers', '*'),
     next()
 }); 
 
@@ -22,6 +22,7 @@ mongoose.connect(connection_url, {
     useCreateIndex: true, 
     useUnifiedTopology: true
 }); 
+
 
 /* API endpoints */
 
@@ -51,7 +52,7 @@ app.post('/v2/posts', (request, response) => {
 
 // get data from mongoDB
 app.get('/v2/posts', (request, response) => {
-    Videos.find((err, data) => {
+    Videos.find({}, (err, data) => {
         if(err) {
             response.status(500).send(err)
         } else {
