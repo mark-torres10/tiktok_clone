@@ -1,5 +1,5 @@
-import express from 'express'; 
-import mongoose from 'mongoose'; 
+import express from "express"; 
+import mongoose from "mongoose"; 
 
 // create instance of application
 const app = express(); 

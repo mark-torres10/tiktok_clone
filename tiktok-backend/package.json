@@ -11,6 +11,7 @@
   "author": "Mark Torres",
   "license": "ISC",
   "dependencies": {
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "mongoose": "^5.11.4",
     "nodemon": "^2.0.6"
