@@ -1,8 +1,7 @@
-import React from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import './App.css';
 import Video from './Video'; 
-import axios from './axios'; 
-import VideoSidebar from './VideoSidebar';
+import axios from './axios';  
 
 function App() {
 
@@ -15,7 +14,7 @@ function App() {
       // update videos state
       setVideos(response.data); 
       return response; 
-    }
+    } 
 
     fetchPosts(); 
   }, []); 
@@ -24,7 +23,8 @@ function App() {
     <div className="app">
       <div className = "app_videos">
         {/* loop through videos, add videos */}
-        {videos.map(({video}) => (
+        {videos.map( 
+          ({source, channel, description, song, likes, messages, shares }) => (
           <Video 
             source={source}
             channel={channel}
