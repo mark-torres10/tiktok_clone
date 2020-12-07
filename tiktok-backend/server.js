@@ -13,7 +13,7 @@ app.use((request, response, next) => {
     response.setHeader('Access-Control-Allow-Origin', '*'), // not to be used in production
     response.setHeader('Access-Control-Allow-Headers', '*'),
     next()
-}); 
+});  
 
 /* DB config */
 const connection_url = "mongodb+srv://admin:Fal2MzvgArefOpOc@cluster0.apdzq.mongodb.net/tiktok?retryWrites=true&w=majority"
